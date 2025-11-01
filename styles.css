@@ -145,3 +145,37 @@ footer {
     height: 92vh;
   }
 }
+
+/* Dark mode toggle */
+.dark-mode {
+  background-color: black;
+  color: #F4F4F4;
+}
+
+.dark-mode .container {
+  background-color: #010f20;
+  color: #F4F4F4;
+}
+
+.dark-mode .login-box {
+  background-color: #08203b;
+  color: #837a7a;
+}
+
+.dark-mode input {
+  background-color: #000000;
+  color: #FFF;
+}
+
+.dark-mode button {
+  background-color: #333;
+  color: black;
+}
+
+.dark-mode button:hover {
+  background-color: #555;
+}
+
+.dark-mode .text-swap {
+  color: #837a7a;
+}
