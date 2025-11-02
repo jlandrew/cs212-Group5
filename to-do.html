@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="row row-cols-auto min-vw-100">
+                <div class="col-8"><h1 class="text-swap">To-Do List Website</h1></div>
+                <div class="col"><a class="btn link-btn" href= "./index.html">Logout</a></div>
+                <!-- to be changed by person doing settings page -->
+                <div class="col"><a class="btn link-btn" href= "/to-do.html">Settings</a></div> 
+            </div>
+        </header>
+
+        <main>
+        <div class="row row-cols-2">
+                <div class="col column me-4">
+                    <p class="text-swap h2 pb-3">To Do</p>
+                    <ul class="text-swap h3" style="text-align: start;">
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="">
+                            <label class="form-check-label">Task One</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="">
+                            <label class="form-check-label">Task Two</label>
+                        </li>                        
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="">
+                            <label class="form-check-label">Task Three</label>
+                        </li>
+                    </ul>
+                    <hr>
+                    <p class="text-swap h2 pb-3">Completed</p> 
+                    <ul class="text-swap h3 list-unstyled ms-3" style="text-align: start;">
+                        <li class="pb-3">Completed Task One</li>
+                        <li class="pb-3">Completed Task Two</li>
+                        <li class="pb-3">Completed Task Three</li>
+                    </ul>
+
+                </div>
+                <div class="col column">
+                    <p class="text-swap h2 pb-3">Daily Reflection</p>
+                    <p class="text-swap h3 pb-2 pt-4">Rate today's productivity:</p>
+                    <input type="range" class="form-range w-50 align-self-center" min="0" max="10">
+                    <output aria-hidden="true"></output>
+
+                    <p class="text-swap h3 pb-2 pt-4">Rate today's general mood:</p>
+                    <input type="range" class="form-range w-50 align-self-center" min="0" max="10">
+                    <output aria-hidden="true"></output>
+
+                    <p class="text-swap h3 pb-2 pt-4">What was the best part of today?</p>
+                    <textarea class="form-control" rows="3" placeholder="Type here..."></textarea>
+                </div>
+        </div>
+            
+        </main>
+
+        <footer>
+            <button class="light" id="btn">Dark Mode Toggle</button>
+            <p class="text-swap">*Team 5 CS 212 Project*</p>
+        </footer>
+    </div>
+
+    <!-- Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+        crossorigin="anonymous"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
