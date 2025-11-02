@@ -23,7 +23,12 @@
         <div class="row row-cols-2">
                 <div class="col column me-4">
                     <p class="text-swap h2 pb-3">To Do</p>
-                    <ul class="text-swap h3" style="text-align: start;">
+                    <div class="d-flex gap-2 mb-3">
+                        <input id="taskInput" class="form-control" type="text" placeholder="New task…">
+                        <button id="addBtn" class="btn btn-secondary" type="button">Add</button>
+                    </div>
+                    
+                    <ul id="taskList" class="text-swap h3" style="text-align: start;">
                         <li class="list-group-item">
                             <input class="form-check-input me-1" type="checkbox" value="">
                             <label class="form-check-label">Task One</label>
@@ -39,11 +44,7 @@
                     </ul>
                     <hr>
                     <p class="text-swap h2 pb-3">Completed</p> 
-                    <ul class="text-swap h3 list-unstyled ms-3" style="text-align: start;">
-                        <li class="pb-3">Completed Task One</li>
-                        <li class="pb-3">Completed Task Two</li>
-                        <li class="pb-3">Completed Task Three</li>
-                    </ul>
+                    <ul id="completedList" class="text-swap h3 list-unstyled ms-3" style="text-align: start;"></ul>
 
                 </div>
                 <div class="col column">
@@ -73,6 +74,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
         crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./app.js"></script>
+    <script src="./task-list.js"></script>
 </body>
 </html>
