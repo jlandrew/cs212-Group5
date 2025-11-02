@@ -217,3 +217,17 @@ hr {
 .dark-mode .link-btn:hover {
   background-color: #555;
 }
+
+.dark-mode textarea {
+  background-color: #837a7a;
+  border: #000000;
+}
+
+.dark-mode textarea:focus {
+  background-color: #837a7a;
+  border: #000000;
+}
+
+.dark-mode input {
+  background-color: #0C2B4E;
+}

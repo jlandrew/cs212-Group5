@@ -20,7 +20,7 @@
         </header>
 
         <main>
-        <div class="row row-cols-2">
+            <div class="row row-cols-2">
                 <div class="col column me-4">
                     <p class="text-swap h2 pb-3">To Do</p>
                     <ul class="text-swap h3" style="text-align: start;">
@@ -50,20 +50,21 @@
                     <p class="text-swap h2 pb-3">Daily Reflection</p>
                     <p class="text-swap h3 pb-2 pt-4">Rate today's productivity:</p>
                     <input type="range" class="form-range w-50 align-self-center" min="0" max="10">
-                    <output aria-hidden="true"></output>
 
                     <p class="text-swap h3 pb-2 pt-4">Rate today's general mood:</p>
                     <input type="range" class="form-range w-50 align-self-center" min="0" max="10">
-                    <output aria-hidden="true"></output>
 
                     <p class="text-swap h3 pb-2 pt-4">What was the best part of today?</p>
                     <textarea class="form-control" rows="3" placeholder="Type here..."></textarea>
                 </div>
-        </div>
-            
+            </div>
+            <div class="row m-2 justify-content-between">
+                <button class="col-2">New Task</button>
+                <button class="col-2">New Reflection</button>
+            </div>
         </main>
 
-        <footer>
+        <footer class="mt-0">
             <button class="light" id="btn">Dark Mode Toggle</button>
             <p class="text-swap">*Team 5 CS 212 Project*</p>
         </footer>
