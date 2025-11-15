@@ -148,13 +148,4 @@ $(document).ready(function () {
 });
 
 
-// guest login button
-const guestbtn = document.getElementById('guestbtn');
-
-// guest-login event listner
-guestbtn.addEventListener('click', function () {
-    window.location.href = 'to-do.html';
-});
-
-
 });
