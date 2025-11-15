@@ -2,15 +2,16 @@ $(function (){
 
 /* ====== Task functionality ====== */
 
+// unique random id for each task to avoid confusion in tasks
+function uid() {
+    return Math.random().toString(36).slice(2, 10);
+}
+
 let tasks = [
     { id: uid(), title: "Sample task A", completed: false },
     { id: uid(), title: "Sample task B", completed: true  },
 ];
 
-// unique random id for each task to avoid confusion in tasks
-function uid() {
-    return Math.random().toString(36).slice(2, 10);
-}
 // DOM Elements
 const $todo = $("#taskList");
 const $done = $("#completedList");
@@ -154,5 +155,6 @@ const guestbtn = document.getElementById('guestbtn');
 guestbtn.addEventListener('click', function () {
     window.location.href = 'to-do.html';
 });
+
 
 });
