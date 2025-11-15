@@ -220,7 +220,7 @@ hr {
 
 /* Basic animation for tasks */
 .fade-in-element {
-  opacity: 100;
+  opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease-in-out;
 }
