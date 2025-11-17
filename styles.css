@@ -218,7 +218,51 @@ hr {
   background-color: #555;
 }
 
-/* Basic animation for tasks */
+.dark-mode .textBox {
+  background-color: #000000;
+  color: #FFF;
+}
+
+/* Reflection card style */
+.refBox {
+  background-color: #1A3D64;
+  color: #F4F4F4;
+  border-radius: 25px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.refBox h4 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.refBox .ratingScores {
+  font-style: italic;
+  font-size: 1.8rem;
+}
+
+.reflectionText {
+  background: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 15px;
+  text-align: left;
+  font-size: small;
+}
+
+.deleteRef {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.deleteRef i {
+  pointer-events: none;
+}
+
+/* Basic animation for website */
 .fade-in-element {
   opacity: 0;
   transform: translateY(20px);

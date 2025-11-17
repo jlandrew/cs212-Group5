@@ -15,7 +15,8 @@
                 <div class="col-8"><h1 class="text-swap">To-Do List Website</h1></div>
                 <div class="col"><a class="btn link-btn" href= "./index.html">Logout</a></div>
                 <!-- to be changed by person doing settings page -->
-                <div class="col"><a class="btn link-btn" href= "./to-do.html">Settings</a></div> 
+                <div class="col"><a class="btn link-btn" href= "./to-do.html">Settings</a></div>
+                <div class="col"><a class="btn link-btn" href= "./reflections.html">Reflections</a></div>
             </div>
         </header>
 
@@ -25,7 +26,7 @@
                     <p class="text-swap h2 pb-3">To Do</p>
                     <div class="d-flex gap-2 mb-3">
                         <input id="taskInput" class="form-control" type="text" placeholder="New task…">
-                        <button id="addBtn" class="btn btn-secondary" type="button">Add</button>
+                        <button id="addBtn" class="btn link-btn" type="button">Add</button>
                     </div>
                     
                     <ul id="taskList" class="text-swap h3" style="text-align: start;">
@@ -50,15 +51,16 @@
                 <div class="col column">
                     <p class="text-swap h2 pb-3">Daily Reflection</p>
                     <p class="text-swap h3 pb-2 pt-4">Rate today's productivity:</p>
-                    <input type="range" class="form-range w-50 align-self-center" min="0" max="10">
-                    <output aria-hidden="true"></output>
+                    <input id="prodInput" type="range" class="form-range w-50 align-self-center" min="0" max="10">
+                    <output id="prodOutput"></output>
 
                     <p class="text-swap h3 pb-2 pt-4">Rate today's general mood:</p>
-                    <input type="range" class="form-range w-50 align-self-center" min="0" max="10">
-                    <output aria-hidden="true"></output>
+                    <input id="moodInput" type="range" class="form-range w-50 align-self-center" min="0" max="10">
+                    <output id="moodOutput"></output>
 
                     <p class="text-swap h3 pb-2 pt-4">What was the best part of today?</p>
-                    <textarea class="form-control" rows="3" placeholder="Type here..."></textarea>
+                    <textarea id="reflectionInput" class="form-control textBox" rows="3" placeholder="Type here..."></textarea>
+                    <button id="saveRef" class="btn link-btn mt-4">Save Reflection</button>
                 </div>
         </div>
             
