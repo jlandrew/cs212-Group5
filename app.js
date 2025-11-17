@@ -59,9 +59,6 @@ function renderItem(task) {
   return $li;
 }
 
-
-
-
 $input.on("keydown", function (e){
     if (e.key === "Enter") $("#addBtn").click();
 })
@@ -148,4 +145,143 @@ $(document).ready(function () {
 });
 
 
+// guest login button
+const guestbtn = document.getElementById('guestbtn');
+
+// guest-login event listner
+guestbtn.addEventListener('click', function () {
+    window.location.href = 'to-do.html';
 });
+
+});
+
+// function the load the reflection
+function reflectionLoad() {
+    return JSON.parse(sessionStorage.getItem("reflections")) || [];
+}
+
+// save reflection functoion
+function reflectionSave(refs) {
+    sessionStorage.setItem("reflections", JSON.stringify(refs));
+}
+
+// function for rendering the reflections
+function renderRefs() {
+    // store the id from the reflections page
+    const refBox = document.getElementById("refList");
+
+    if (!refBox)
+    {
+        return;
+    }
+
+    // load the reflections
+    const refs = reflectionLoad();
+
+    // if the list of reflections is empty
+    if (refs.length === 0)
+    {
+        // display that there 
+        refBox.innerHTML = `<p class="text-light">No Reflections Saved!</p>`;
+        return;
+    }
+
+    // set the array to be empty
+    refBox.innerHTML = "";
+
+    // for each reflection
+    refs.forEach(ref => {
+
+        // store a reference from the reflections page
+        const box = document.createElement("div");
+
+        // create the box card
+        box.className = "refBox";
+
+        // store the date, productivity/mood scores, and the user input inside the box
+        box.innerHTML = `
+            <h4 class="text-swap">${ref.date}</h4>
+            <div class="ratingScores text-swap">
+                Productivity Score: ${ref.productivity}
+                <br>
+                Mood Score: ${ref.mood}
+            </div>
+
+            <div class="reflectionText textBox">
+                ${ref.userText}
+            </div>
+
+            
+            <button class="deleteRef" data-id="${ref.id}">
+                <i class="fa-solid fa-trash-can"></i>
+            </button>
+            `;
+
+            // append the reflection to the created box
+            refBox.appendChild(box);
+    });
+}
+
+// render the reflections when page is loaded
+document.addEventListener("DOMContentLoaded", renderRefs);
+
+// get ids of all reflection information and store in variables
+const prodInput = document.getElementById("prodInput");
+const moodInput = document.getElementById("moodInput");
+const reflectionInput = document.getElementById("reflectionInput");
+
+// store the button to save the reflection
+const refBtn = document.getElementById("saveRef");
+
+// for the productivity input
+if (prodInput) 
+{
+    // add an event listener for when the user chooses the productivity score and store it in the ouput
+    prodInput.addEventListener("input", () =>
+        document.getElementById("prodOutput").textContent = prodInput.value
+    );
+}
+
+// for the mood input
+if (moodInput) 
+{
+    // add an event listener for when the user chooses the mood score and store it in the ouput
+    moodInput.addEventListener("input", () =>
+        document.getElementById("moodOutput").textContent = moodInput.value
+    );
+}
+
+// for the reflection submit
+if (refBtn) 
+{
+    // add an event listener for when the button is clicked
+    refBtn.addEventListener("click", () => {
+        // store the output of loading the relection load function
+        const refs = reflectionLoad();
+
+        // add all reflection values inside of a layout
+        const entryLayout = {
+            date: new Date().toLocaleDateString(),
+            productivity: prodInput.value,
+            mood: moodInput.value,
+            userText: reflectionInput.value
+        };
+
+        // add the information into the reflection array
+        refs.unshift(entryLayout);
+
+        // save the reflection
+        reflectionSave(refs);
+
+        // reset the input for the text
+        reflectionInput.value = "";
+
+        // reset the input value
+        prodInput.value = 5;
+        moodInput.value = 5;
+
+        // reset the output content
+        prodOutput.textContent = "5";
+        moodOutput.textContent = "5";
+    });
+}
