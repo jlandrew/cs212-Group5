@@ -210,7 +210,6 @@ function renderRefs() {
             <div class="reflectionText textBox">
                 ${ref.userText}
             </div>
-
             
             <button class="deleteRef" data-id="${ref.id}">
                 <i class="fa-solid fa-trash-can"></i>
@@ -221,6 +220,26 @@ function renderRefs() {
             refBox.appendChild(box);
     });
 }
+
+// event listener to remove reflection from list
+document.addEventListener("click", function(outside) {
+
+    // get delete button from render function
+    const button = outside.target.closest(".deleteRef");
+
+    // store the id for the reflection
+    const identity = button.dataset.id;
+
+    // remove the reflection from the list
+    let reflections = reflectionLoad();
+    reflections = reflections.filter(ref => ref.id !== identity);
+
+    // resave the reflections
+    reflectionSave(reflections);
+
+    // re-render
+    renderRefs();
+});
 
 // render the reflections when page is loaded
 document.addEventListener("DOMContentLoaded", renderRefs);
@@ -259,8 +278,9 @@ if (refBtn)
         // store the output of loading the relection load function
         const refs = reflectionLoad();
 
-        // add all reflection values inside of a layout
+        // add all reflection values inside of a layout with random id value
         const entryLayout = {
+            id: crypto.randomUUID(),
             date: new Date().toLocaleDateString(),
             productivity: prodInput.value,
             mood: moodInput.value,
